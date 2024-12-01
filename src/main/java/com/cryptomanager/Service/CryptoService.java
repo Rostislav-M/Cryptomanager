@@ -9,21 +9,18 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 @Service
-
 public class CryptoService {
-
 
     private final ArrayList<Crypto> listOfCryptoPortfolio;
 
     public CryptoService(ArrayList<Crypto>listOfCryptoPortfolio){
         this.listOfCryptoPortfolio= listOfCryptoPortfolio;
     }
-    //Přidání nové kryptoměny do portfolia
+
 
     public void addCrypto(Crypto crypto){
         listOfCryptoPortfolio.add(crypto);
     }
-    //Výpis všech kryptoměn v portfoliu.
 
     public ArrayList<Crypto> getListOfCryptoPortfolio(){
         return listOfCryptoPortfolio;

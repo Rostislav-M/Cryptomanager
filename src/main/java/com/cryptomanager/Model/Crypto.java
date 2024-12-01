@@ -2,11 +2,12 @@ package com.cryptomanager.Model;
 
 public class Crypto {
     private static int nextId=1;  //pro unikatni id
-    int id;
-    String name;
-    String symbol;
-    double price;
-    double quantity;
+    private int id;
+    private String name;
+    private String symbol;
+    private double price;
+    private double quantity;
+
 
     public Crypto() {
         this.id = nextId++;
@@ -38,21 +39,19 @@ public class Crypto {
 
     public void setName(String name) {
         if (name == null || name.trim().isEmpty()) {
-           throw new IllegalArgumentException("Name is required and cannot be empty");
+            throw new IllegalArgumentException ("Name is required and cannot be empty");
         }
         this.name = name;
     }
-
     public String getSymbol() {
         return symbol;
     }
 
     public void setSymbol(String symbol) {
         if (symbol == null || symbol.trim().isEmpty()) {
-            throw new IllegalArgumentException("Symbol is required and cannot be empty");
+            throw new IllegalArgumentException ("Symbol is required and cannot be empty");
         }
         this.symbol = symbol;
-
     }
 
     public double getPrice() {
@@ -61,7 +60,7 @@ public class Crypto {
 
     public void setPrice(double price) {
         if(price <=0){
-            throw new IllegalArgumentException("Price must be higher than 0");
+            throw new IllegalArgumentException ("Price must be higher than 0");
         }
         this.price = price;
     }
@@ -72,7 +71,7 @@ public class Crypto {
 
     public void setQuantity(double quantity) {
         if(quantity<0){
-            throw new IllegalArgumentException("Quantity cannot be less than 0"); //ponechana moznost nastaveni na 0 pri prodeji kryptomeny
+           throw new IllegalArgumentException("Quantity cannot be less than 0");//ponechana moznost nastaveni na 0 pri prodeji kryptomeny
         }
         this.quantity = quantity;
     }
